@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Algorithm Summary</h2>
+
+<table style="width:100%">
+
+    <tr>
+        <th>Algorithm Name</th>
+        <th>Accuracy</th>
+        <th>Precision Score</th>
+        <th>Recall Score</th>
+        <th>F1 Score</th>
+  
+      {% for i in value %}
+      <tr>
+            <td>{{i.4}}</td>
+            <td>{{i.0}}</td>
+            <td>{{i.1}}</td>
+            <td>{{i.2}}</td>
+            <td>{{i.3}}</td>
+            
+        </tr>
+    {% endfor %}
+  
+</table>
+
+
+</body>
+</html>
+

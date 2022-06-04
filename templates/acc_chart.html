@@ -1,0 +1,91 @@
+<!--
+  THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=line-smooth
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+
+  <h1>Algorithm Summary</h1>
+
+		<div id="container1" style="height: 100%"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+       
+        <script type="text/javascript">
+            var dom1 = document.getElementById("container1");
+            var myChart1 = echarts.init(dom1);
+            var app1 = {};
+
+            var option1;
+
+
+
+            option1 = {
+            title: {
+            text: "Algorithms and it's Accuracy",
+            },
+            tooltip: {
+            trigger: 'axis'
+            },
+              legend: {},
+              toolbox: {
+              show: true,
+              feature: {
+              dataZoom: {
+              yAxisIndex: 'none'
+            },
+              dataView: { readOnly: false },
+              magicType: { type: ['line', 'bar'] },
+              restore: {},
+              saveAsImage: {}
+            }
+            },
+              xAxis: {
+              type: 'category',
+              boundaryGap: false,
+              data: ["Logistics Regression","Random Forest", "KNN","Naive Bayes", "Decision Tree"]
+            },
+              yAxis: {
+              type: 'value',
+              axisLabel: {
+              formatter: '{value}'
+            }
+            },
+              series: [
+            {
+              name: 'Target',
+              type: 'line',
+              data: [{
+          value: 91.39,
+          itemStyle: {
+            color: '#a90000'
+          }}, 
+          88.76, 
+          90.84,
+           88.02, 
+           91.38],
+              markPoint: {
+              data: [
+                { type: 'max', name: 'Max' },
+                { type: 'min', name: 'Min' }
+          ]
+          },
+            markLine: {
+            data: [{ type: 'average', name: 'Avg' }]
+          }
+          }
+          ]
+          };
+
+          if (option1 && typeof option1 === 'object') {
+          myChart1.setOption(option1);
+        }
+
+</script>
+
+
+</body>
+</html>
